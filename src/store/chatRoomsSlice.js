@@ -1,27 +1,36 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentChatRoon : {
-    currentChatRoom : {
-      createBy : {
-        image : '',
+    currentChatRoom: {
+        createdBy: {
+            image: '',
+            name: ''
+        },
+        description: '',
+        id: '',
         name: ''
-      },
-      description : '',
-      id : '',
-      name : ''
-    }
-  },
-  isPrivateChatRoom : false,
-  userPosts : null
+    },
+    isPrivateChatRoom: false,
+    userPosts: null
 }
 
-export const chatRoomSlice = createSlice({
-  name : 'chatRoom',
-  initialState,
-  reducers: {
 
-  }
+export const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers: {
+      setCurrentChatRoom: (state, action) => {
+          state.currentChatRoom = action.payload;
+      },
+      setPrivateChatRoom: (state, action) => {
+          state.isPrivateChatRoom = action.payload;
+      },
+      setUserPosts: (state, action) => {
+          state.userPosts = action.payload;
+      }
+    }
 })
 
-export default chatRoomSlice
+export const { setCurrentChatRoom, setPrivateChatRoom, setUserPosts } = userSlice.actions;
+
+export default userSlice.reducer;
