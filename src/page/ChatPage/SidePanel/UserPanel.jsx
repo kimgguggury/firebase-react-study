@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import {getAuth, signOut} from 'firebase/auth';
 import app from '../../../firebase';
 import { useRef } from 'react';
+import schoolLogo from '../../../assets/white1.jpg'
 const UserPanel = () => {
   
   const { currentUser } = useSelector(state => state.user)
@@ -32,7 +33,11 @@ const UserPanel = () => {
   return (
     <div>
       <h3 style = {{ color : 'white' }}>
-        <IoIosChatboxes /> {" "} Chat App
+      <img 
+      src={schoolLogo} 
+      alt="충북대학교 로고" 
+      style={{ height: '50px', marginRight: '5px' }} 
+    /> {" "} 충북대학교   
       </h3>
 
       <div style={{display: 'flex', marginBottom: '1rem'}}>
