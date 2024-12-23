@@ -10,7 +10,7 @@ const SidePanel = () => {
     <div style ={{
       backgroundColor : '#b62b5c',
       padding : '2rem',
-      minHeight : '100vh',
+      minHeight : '100%',
       color : 'white',
       minWidth : '275px'
     }}>

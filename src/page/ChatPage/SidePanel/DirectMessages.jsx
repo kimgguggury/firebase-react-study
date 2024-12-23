@@ -2,7 +2,7 @@ import React from 'react'
 
 const DirectMessages = () => {
   return (
-    <div>DirectMessages</div>
+    <div></div>
   )
 }
 
