@@ -11,6 +11,8 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { getAuth } from 'firebase/auth'
 import { useDispatch } from 'react-redux'
 import { clearUser, setUser } from "./store/userSlice";
+import { Trash } from './page/Trash/Trash'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -48,6 +50,7 @@ function App() {
         <Route path ="/" element={<ChatPage/>}></Route>
         <Route path ="/login" element ={<LoginPage />} />
         <Route path ="/register" element ={<RegisterPage />} />
+        <Route path="/trash" element ={<Trash />} />
       </Routes>
    
     </>

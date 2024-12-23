@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import moment from 'moment';
 import { Image } from 'react-bootstrap';
 
@@ -20,15 +20,24 @@ function Message({ message, user }) {
     }
 
     return (
-        <div style={{ margin: '16px 0', display: 'flex' }}>
-            <Image
-                roundedCircle
-                style={{ width: '40px', height: '40px', marginTop: '3px' }}
-                src={message.user.image}
-                alt={message.user.name}
-            />
+        <div 
+            style={{ 
+                margin: '16px 0', 
+                display: 'flex', 
+                justifyContent: isMessageMine(message, user) ? 'flex-end' : 'flex-start' 
+            }}
+        >
+            {!isMessageMine(message, user) && (
+                <Image
+                    roundedCircle
+                    style={{ width: '40px', height: '40px', marginTop: '3px' }}
+                    src={message.user.image}
+                    alt={message.user.name}
+                />
+            )}
             <div style={{
-                marginLeft: 10,
+                marginLeft: isMessageMine(message, user) ? '0' : '10px',
+                marginRight: isMessageMine(message, user) ? '10px' : '0',
             }}>
                 <h6 style={{
                     color: isMessageMine(message, user) && "rgb(123, 131, 235)"
@@ -49,4 +58,4 @@ function Message({ message, user }) {
     )
 }
 
-export default Message
+export default Message;
