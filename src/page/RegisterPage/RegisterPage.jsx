@@ -53,11 +53,15 @@ const RegisterPage = () => {
   }
   return (
     <div className='auth-wrapper'>
-      <div style = {{ textAlign : 'center' }}>
+      <div style = {{margin: '0 auto', width : '450px', height: '500px', backgroundColor: '#bf1650',padding:'20px' 
+        ,borderRadius: '10px'
+
+      }}>
+      <div style = {{ textAlign : 'center', color: 'white' }}>
         <h3>Register</h3>
       </div>
       <form onSubmit= {handleSubmit(onSubmit)}>
-        <label htmlFor = 'email'>Email</label>
+        <label style = {{color:'white'}} htmlFor = 'email'>Email</label>
         <input 
           name = 'email'
           type = 'email'
@@ -66,7 +70,7 @@ const RegisterPage = () => {
         />
         {errors.email && <p>This email field is required</p>}
 
-        <label htmlFor = 'name'>name</label>
+        <label style = {{color:'white'}} htmlFor = 'name'>name</label>
         <input 
           name = 'name'
           type = 'text'
@@ -75,7 +79,7 @@ const RegisterPage = () => {
         />
         {errors.email && errors.name.type === "required" && <p>This name field is required</p>}
         {errors.name && errors.name.type === "maxLength" && <p>your input exceed maxinum length</p>}
-        <label htmlFor = 'password'>password</label>
+        <label style = {{color:'white'}} htmlFor = 'password'>password</label>
         <input 
           name = 'password'
           type = 'password'
@@ -88,8 +92,9 @@ const RegisterPage = () => {
           {errorFromSubmit &&
           <p>{errorFromSubmit}</p>}
         <input type ='submit' disabled = {loading} />
-        <Link style = {{ color : 'gray', textDecoration : 'none'}} to = {'/login'}>이미 아이디가 있다면...</Link>
+        <Link style = {{ color : 'white', textDecoration : 'none'}} to = {'/login'}>이미 아이디가 있다면...</Link>
       </form>
+      </div>
     </div>
   )
 }

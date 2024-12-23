@@ -41,7 +41,7 @@ const ChatRooms = () => {
     }
 
     const AddChatRoomsListeners = () => {
-        let chatRoomsArray = [];
+        let chatRoomsArray = [];  //채팅방 데이터를 임시로 받을 배열
 
         onChildAdded(chatRoomsRef, DataSnapshot => {
             chatRoomsArray.push(DataSnapshot.val());
